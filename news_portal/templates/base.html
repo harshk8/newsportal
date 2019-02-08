@@ -59,6 +59,7 @@
 							<a href="..//"><img src={% static "news/img/core-img/logo.png" %} alt=""></a>
 						</div>
 
+						{% if request.user.is_authenticate == false %}
 						<!-- Login Search Area -->
 						<div class="login-search-area d-flex align-items-center">
 							<!-- Login -->
@@ -74,6 +75,9 @@
 								</form>
 							</div>
 						</div>
+						{% endif %}
+
+
 					</div>
 				</div>
 			</div>
@@ -115,7 +119,15 @@
 										<li><a href="catagories-post.html">Catagories</a></li>
 										<li><a href="single-post.html">Single Articles</a></li>
 										<li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">Contact</a></li>
+										<li><a href=# >Contact</a></li>
+										
+										{% if request.user.is_authenticate %}
+										
+											<li><a href=#>My Account</a></li>
+										
+										{% endif %}
+
+
 										<li><a href="#">Dropdown</a>
 											<ul class="dropdown">
 												<li><a href="index.html">Home</a></li>
